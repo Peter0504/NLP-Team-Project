@@ -26,26 +26,30 @@ This pipeline is broken down into four distinct stages:
 Ensure you have Python 3.9+ installed. Clone this repository and install the required packages:
 ```bash
 pip install -r requirements.txt
+```
 
 ### 2. Download the spaCy Model
 You must download the English language model for the NER pipeline to function:
 ```Bash
 python -m spacy download en_core_web_sm
+```
 
 ### 3. Environment Variables
 You will need an active OpenAI API Key to generate embeddings and run the GPT-4 LLM.
 Set your API key in your environment, or add it directly to app/rag_engine.py:
 ```Python
 os.environ["OPENAI_API_KEY"] = "your-openai-api-key-here"
+```
 
 ### 4. Run the Pipeline
 To process the data, run the orchestrator script. (Note: If you have already processed the .parquet files, you can skip this step).
 ```Bash
 python run_all.py
+```
 
 ### 5. Start the API Server
 Once the data is indexed and saved to the data/processed/ directory, launch the FastAPI server:
 ```Bash
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
-
+```
 Navigate to http://127.0.0.1:8000/docs in your web browser to access the interactive Swagger UI and test the /query endpoint!
