@@ -1,0 +1,6 @@
+{
+  "dataset_id": "tpotterer/motley-fool-scraped-earnings-call-transcripts",
+  "run_id": "20260306T091457Z",
+  "rows": 17593,
+  "dropped_exact_duplicates": 1162
+}
